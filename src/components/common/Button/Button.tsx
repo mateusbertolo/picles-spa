@@ -1,11 +1,23 @@
 import { ButtonHTMLAttributes } from "react"
+import styles from "./Button.module.css"
+import { ButtonVariant } from "./button.constant"
 
-import styles from './Button.module.css'
-
-interface ibutton extends ButtonHTMLAttributes<HTMLButtonElement>{
+interface IButton extends ButtonHTMLAttributes<HTMLButtonElement>{
+    variant?: ButtonVariant
 }
-export function button({Children, ...rest}: ibutton) {
-    return <Button{...rest}>
-    {Children}
-    </Button>
+export function Button({variant = ButtonVariant.Default, children, ...rest}: IButton) {
+    let buttonClass = styles.buttonBase
+    switch(variant){
+        case ButtonVariant.Default:
+         buttonClass += `$(styles.buttonDefault)`; break;
+         case ButtonVariant.Disabled:
+         buttonClass += `$(styles.buttonDisabled)`; break;
+         case ButtonVariant.Outlined:
+         buttonClass += `$(styles.buttonOutlined)`; break;
+         case ButtonVariant.Text:
+         buttonClass += `$(styles.buttonText)`; break;
+    }
+    return <button className={styles.buttonBase}{...rest}>
+    {children}
+    </button>
 }
