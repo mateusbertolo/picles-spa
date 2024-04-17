@@ -1,17 +1,19 @@
 import { Link } from "react-router-dom";
 import { Header } from "../../components/common/Header/Header";
 import { Grid } from "../../components/layout/Grid";
-import styles from './Pets.module.css'
+import styles from './Pets.module.css';
+import { Card } from "../../components/common/Cards";
 
-export function Pets(){
-    return(
+export function Pets() {
+    return (
         <Grid>
             <div className={styles.container}>
-
-            <Header />
-            <Link to='/pets/20'>vai dar erro</Link>
+                <Header />
+                <main className={styles.list}>
+                    <Card href="/pets/1" text="jao" thumb="" />
+                </main>
+                <Link to='/pets/20'>Não vai dar erro</Link>
             </div>
-
         </Grid>
-    )
+    );
 }
