@@ -1,14 +1,15 @@
-import { Header } from "../../components/common/Header"
-import { Grid } from "../../components/layout/Grid"
+import { Header } from "../../components/common/Header/Header";
+import { Grid } from "../../components/layout/Grid";
 import styles from './PetDetails.module.css'
 
-export function Petsdetails(){
+export function PetDetails(){
     return(
-    <Grid>
-        <div className={styles.container}>
-        <header showButton={true}/>
-        <h3>Detalhes do Pet</h3>
-        </div>
-    </Grid>
+        <Grid>
+            <div className={styles.container}>
+
+            <Header showReturn={true} />
+            <h1>TEXTO TESTE</h1>
+            </div>
+        </Grid>
     )
 }

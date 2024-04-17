@@ -1,30 +1,29 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter  } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { Pets } from "./pages/Pets";
-import { Petsdetails } from "./pages/PetDetails";
+import { PetDetails } from "./pages/PetDetails";
 
 const router = createBrowserRouter([
     {
-        path: '/',
+        path:'/',
         element: <Home/>,
     },
     {
-        path: '/pets',
-        children: [
+        path:'/pets',
+        children:[
             {
                 index:true,
-                element:<Pets/>
+                element:<Pets/>,
             },
             {
-                path: '/pets/id',
-                element: <Petsdetails/>
-            }
-        ],
+                path:'/pets/:id',
+                element:<PetDetails/>,
+            },
+        ]
     },
-    {
-        path: '/admin',
-        element: <h3>admin</h3>,
-    },
+    // {
+    //     path:'/admin',
+    //     element:<Admin/>
+    // }
 ])
-
 export default router
