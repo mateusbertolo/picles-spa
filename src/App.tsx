@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Button } from './components/common/Button'
-import { ButtonVariant } from './components/common/Button/Button.constants'
+import { ButtonVariant } from './components/common/Button/button.constant'
 
 export function App() {
   const [count, setCount] = useState(0)
