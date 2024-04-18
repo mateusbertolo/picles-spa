@@ -5,8 +5,14 @@ import { Grid } from "../../components/layout/Grid";
 import styles from './Pets.module.css'
 import { Card } from "../../components/common/Card";
 import { Skeleton } from "../../components/common/skeleton";
+import { useQuery } from "@tanstack/react-query";
+import { GetPets } from "../../services/pets/getPets";
 
+const {} = useQuery({
+    queryKey: ['get-pets'],
+    queryFn: () => GetPets(),
 
+})
 
 export function Pets(){
     useEffect(() =>{
