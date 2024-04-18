@@ -9,3 +9,11 @@ export interface Pet{
 }
 
 export type GetPetsRequet = Partial<Pick<IDBIndexParameters, 'type' >
+
+}
+
+export type GetPetsResponse = {
+    items: IPet[]
+    totalPages:number
+    currentPage:number
+}
