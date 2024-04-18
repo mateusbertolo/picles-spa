@@ -4,7 +4,7 @@ import { Header } from "../../components/common/Header/Header";
 import { Grid } from "../../components/layout/Grid";
 import styles from './Pets.module.css'
 import { Card } from "../../components/common/Card";
-import { Skeleton } from "../../components/common/Skeleton";
+import { Skeleton } from "../../components/common/skeleton";
 
 
 
