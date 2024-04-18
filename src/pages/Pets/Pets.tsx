@@ -24,9 +24,11 @@ export function Pets(){
             <div className={styles.container}>
 
             <Header />
+            {
+                isLoading && (<Skeleton containerClassName={styles.skeleton} count={10}/>
+            )}
             <main className={styles.list}>
-                {data?.items.map{pet} => (
-                <Skeleton count={5} containerClassName={styles.skeleton}/>
+                {data?.items?.map(Pets) => (
                 <Card href="pets/1" text="Bonny" thumb=""/>
                 <Card href="pets/2" text="Nina" thumb=""/>
                 <Card href="pets/3" text="Julia" thumb=""/>    
@@ -34,7 +36,7 @@ export function Pets(){
                 <Card href="pets/3" text="Julia" thumb=""/>    
                 <Card href="pets/2" text="Nina" thumb=""/>
                 <Card href="pets/3" text="Julia" thumb=""/>
-                )}                
+                )}          
             </main>
             </div>
 
