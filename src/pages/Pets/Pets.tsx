@@ -8,7 +8,8 @@ import { Skeleton } from "../../components/common/skeleton";
 import { useQuery } from "@tanstack/react-query";
 import { GetPets } from "../../services/pets/getPets";
 
-const {} = useQuery({
+export function Pets(){
+const {data, isLoading} = useQuery({
     queryKey: ['get-pets'],
     queryFn: () => GetPets(),
 
@@ -24,6 +25,7 @@ export function Pets(){
 
             <Header />
             <main className={styles.list}>
+                {data?.items.map{pet} => (
                 <Skeleton count={5} containerClassName={styles.skeleton}/>
                 <Card href="pets/1" text="Bonny" thumb=""/>
                 <Card href="pets/2" text="Nina" thumb=""/>
@@ -31,7 +33,8 @@ export function Pets(){
                 <Card href="pets/2" text="Nina" thumb=""/>
                 <Card href="pets/3" text="Julia" thumb=""/>    
                 <Card href="pets/2" text="Nina" thumb=""/>
-                <Card href="pets/3" text="Julia" thumb=""/>                
+                <Card href="pets/3" text="Julia" thumb=""/>
+                )}                
             </main>
             </div>
 
