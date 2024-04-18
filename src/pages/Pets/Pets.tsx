@@ -3,6 +3,8 @@ import { Header } from "../../components/common/Header/Header";
 import { Grid } from "../../components/layout/Grid";
 import styles from './Pets.module.css';
 import { Card } from "../../components/common/Card";
+import Skeleton from "react-loading-skeleton";
+import { getPets } from "../../services/api/Pets/getPets";
 
 export function Pets() {
     return (
