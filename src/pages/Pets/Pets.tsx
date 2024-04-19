@@ -16,11 +16,6 @@ export function Pets() {
         page: searchParams.get('page') ? Number(searchParams.get('page')) : 1
     };
     
-    const { data, isLoading } = useQuery({
-        queryKey: ['get-pets', urlParams], // This should be a string
-        queryFn: () => GetPets(urlParams), // Corrected spelling of queryFn
-    });
-    
     // Corrected changePage function
     function changePage(page: number) {
         setSearchParams(params => {
