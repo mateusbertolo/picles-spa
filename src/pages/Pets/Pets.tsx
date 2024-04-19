@@ -11,6 +11,7 @@ export function Pets() {
     const { data, isLoading } = useQuery({
         queryKey: ['get-pets'],
         queryFn: () => GetPets(),
+        staleTime: 1 * 1000, // 1 segundo em milissegundos
     });
 
     useEffect(() => {
@@ -24,7 +25,7 @@ export function Pets() {
                 {isLoading && <Skeleton containerClassName={styles.skeleton} count={10} />}
                 <main className={styles.list}>
                     {data?.items?.map((pet) => (
-                        <Card key={pet.id} href={`pets/${pet.id}`} text={pet.name} thumb={pet.thumb} />
+                        <Card key={pet.id} href={`pets/${pet.id}`} text={pet.name} thumb={pet.photo} />
                     ))}
                 </main>
             </div>
