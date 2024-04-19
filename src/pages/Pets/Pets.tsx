@@ -12,9 +12,13 @@ import { useSearchParams } from "react-router-dom";
 export function Pets() {
     const [searchParams, setSearchParams] = useSearchParams();
 
+    const urlParams = {
+        page: searchParams.get('page') ? Number(searchParams.get('page')) : 1
+    };
+    
     const { data, isLoading } = useQuery({
-        queryKey: ['get-pets'], // This should be a string
-        queryFn: () => GetPets(), // Corrected spelling of queryFn
+        queryKey: ['get-pets', urlParams], // This should be a string
+        queryFn: () => GetPets(urlParams), // Corrected spelling of queryFn
     });
 
     // Corrected changePage function
@@ -56,7 +60,7 @@ export function Pets() {
                 <Pagination
                 currentPage={data.currentPage}
                 totalPages={data.totalPages}
-                onPageChange={(Number) => console.log(Number)}
+                onPageChange={(Number) => currentPage(Number)}
                 />}
             </div>
         </Grid>
