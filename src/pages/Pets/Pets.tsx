@@ -6,6 +6,7 @@ import { Card } from "../../components/common/Card";
 import { Skeleton } from "../../components/common/skeleton";
 import { useQuery } from "@tanstack/react-query";
 import { GetPets } from "../../services/pets/getPets";
+import { Pagination } from "../../components/common/Pagination";
 
 export function Pets() {
     const { data, isLoading } = useQuery({
@@ -28,6 +29,12 @@ export function Pets() {
                         <Card key={pet.id} href={`pets/${pet.id}`} text={pet.name} thumb={pet.photo} />
                     ))}
                 </main>
+                {data?.currentPage && 
+                <Pagination
+                currentPage={data.currentPage}
+                totalPages={data.totalPages}
+                onPageChange={(number) => console.log(number)}
+                />}
             </div>
         </Grid>
     );
