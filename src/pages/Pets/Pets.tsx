@@ -20,7 +20,7 @@ export function Pets() {
         queryKey: ['get-pets', urlParams], // This should be a string
         queryFn: () => GetPets(urlParams), // Corrected spelling of queryFn
     });
-
+    
     // Corrected changePage function
     function changePage(page: number) {
         setSearchParams(params => {
@@ -28,8 +28,6 @@ export function Pets() {
             return params;
         });
     }
-
-    // Add return statement if needed
 }
 
 export default Pets; // Exporting the component if needed
