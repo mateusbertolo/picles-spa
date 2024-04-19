@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import styles from './Card.module.css'
 
-import { ImageBase64 } from '../imageBase64'
+import { ImageBase64 } from '../ImageBase64'
 
 interface ICard{
     href:string,
@@ -12,7 +12,7 @@ interface ICard{
 export function Card({href,text,thumb}:ICard){
     return(
         <Link to={href} className={styles.card}>
-            <ImageBase64 src={thumb}/>
+            <ImageBase64 src={thumb} />
             <span>{text}</span>
         </Link>    
     )
