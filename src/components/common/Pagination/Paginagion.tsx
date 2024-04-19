@@ -15,7 +15,7 @@ export function Pagination({ currentPage, totalPages, onPageChange }: IPaginatio
             <ul className={styles.pagination}>
                 {pageNumber.map(Number => (
                     <li key={Number} 
-                    className={'${currentPage === page ? styles.active : null}'}>
+                    className={`${currentPage === Number ? styles.active : null}`}>
                         <button onClick={() => onPageChange(Number)}>{Number}</button>
                     </li>
                 ))}

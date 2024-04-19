@@ -7,6 +7,29 @@ import { Skeleton } from "../../components/common/skeleton";
 import { useQuery } from "@tanstack/react-query";
 import { GetPets } from "../../services/pets/getPets";
 import { Pagination } from "../../components/common/Pagination";
+import { useSearchParams } from "react-router-dom";
+
+export function Pets() {
+    const [searchParams, setSearchParams] = useSearchParams();
+
+    const { data, isLoading } = useQuery({
+        queryKey: ['get-pets'], // This should be a string
+        queryFn: () => GetPets(), // Corrected spelling of queryFn
+    });
+
+    // Corrected changePage function
+    function changePage(page: number) {
+        setSearchParams(params => {
+            params.set('page', String(page)); // Changed syntax for setting query parameter
+            return params;
+        });
+    }
+
+    // Add return statement if needed
+}
+
+export default Pets; // Exporting the component if needed
+
 
 export function Pets() {
     const { data, isLoading } = useQuery({
@@ -33,7 +56,7 @@ export function Pets() {
                 <Pagination
                 currentPage={data.currentPage}
                 totalPages={data.totalPages}
-                onPageChange={(number) => console.log(number)}
+                onPageChange={(Number) => console.log(Number)}
                 />}
             </div>
         </Grid>
