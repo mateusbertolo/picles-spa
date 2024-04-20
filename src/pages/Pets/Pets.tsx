@@ -22,11 +22,8 @@ export function Pets() {
     const urlParams = {
       page: Number(searchParams.get('page')) ?? 1,
       type: searchParams.get('type') ?? '',
-      size: searchParams.get('size') ?? '',
       gender: searchParams.get('gender') ?? ''
     };
-  
-    // Restante do código...
   }
   
   return (
