@@ -8,6 +8,7 @@ import { Skeleton } from '../../components/common/skeleton'
 import { useQuery } from '@tanstack/react-query'
 import { Select } from '../../components/common/Select'
 import { filtercolum } from './pets.constants'
+import { useSearchParams } from 'react-router-dom'
 
 export function Pets() {
   const { data, isLoading } = useQuery({
@@ -15,13 +16,19 @@ export function Pets() {
     queryFn: () => getPets(),
   })
 
-export
-
-const urlParams={
-  page: getSearchParamsForLocation.get('page') Number{searchparams.get('page'): },
-  type searchparams
-}
-
+  export function Pets() {
+    const [searchParams, setSearchParams] = useSearchParams();
+  
+    const urlParams = {
+      page: Number(searchParams.get('page')) ?? 1,
+      type: searchParams.get('type') ?? '',
+      size: searchParams.get('size') ?? '',
+      gender: searchParams.get('gender') ?? ''
+    };
+  
+    // Restante do código...
+  }
+  
   return (
     <Grid>
       <div className={styles.container}>
