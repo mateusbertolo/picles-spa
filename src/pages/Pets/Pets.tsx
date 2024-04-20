@@ -7,6 +7,7 @@ import { getPets } from '../../services/pets/getPets'
 import { Skeleton } from '../../components/common/skeleton'
 import { useQuery } from '@tanstack/react-query'
 import { Select } from '../../components/common/Select'
+import { filtercolum } from './pets.constants'
 
 export function Pets() {
   const { data, isLoading } = useQuery({
@@ -14,8 +15,11 @@ export function Pets() {
     queryFn: () => getPets(),
   })
 
+export
+
 const urlParams={
-  page
+  page: getSearchParamsForLocation.get('page') Number{searchparams.get('page'): },
+  type searchparams
 }
 
   return (
@@ -23,20 +27,20 @@ const urlParams={
       <div className={styles.container}>
         <Header />
         <form className={styles.filters}>
-            <div className={styles.columns}>
-                <div className={styles.columns}>
-                    <Select
-                        label="Especie"
-                        options={[
-                            { value: '', text: 'todos' },
-                            { value: 'cachorro', text: 'cachorro' },
-                            { value: 'gato', text: 'gato' },
-                        ]}
-                    />
-                </div>
-            </div>
-            <button type='submit'>Buscar</button>
-        </form>
+              <div className={styles.columns}>
+                  {filtercolum.map(filter => (
+                      <div key={filter.name} className={styles.columns}>
+                          <Select
+                              label={filter.title}
+                              defaultValue=(urlParams{filter.name})
+                              name={filter.name}
+                              options={filter.options}
+                          />
+                      </div>
+                  ))}
+              </div>
+              <button type='submit'>Buscar</button>
+          </form>
         {isLoading && (
           <Skeleton containerClassName={styles.skeleton} count={10} />
         )}

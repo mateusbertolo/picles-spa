@@ -1,0 +1,61 @@
+export const filtercolum = [
+        {
+            name: 'type',
+            title:'Especie',
+            options:[
+                {
+                    values:'',
+                    Text:'Todos'
+                },
+                {
+                    values:'cachorro',
+                    Text:'Cachorros'
+                },
+                {
+                    values:'gato',
+                    Text:'Gatos'
+                },
+            ],
+        },
+        {
+            name: 'size',
+            title:'Portes',
+            options:[
+                {
+                    values:'',
+                    Text:'Todos'
+                },
+                {
+                    values:'pequeno',
+                    Text:'Pequeno'
+                },
+                {
+                    values:'medio',
+                    Text:'Medio'
+                },
+                {
+                    values:'grande',
+                    Text:'Grande'
+                },
+            ],
+        },
+        {
+            name: 'gender',
+            title:'portes',
+            options:[
+                {
+                values:'',
+                Text:'Todos'
+                },
+                {
+                    values:'femea',
+                    Text:'Femea'
+                },
+                {
+                    values:'macho',
+                    Text:'Macho'
+                },
+            ],
+        },
+        
+]
