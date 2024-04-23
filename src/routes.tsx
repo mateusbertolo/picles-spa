@@ -3,6 +3,7 @@ import { Home } from './pages/Home';
 import { Pets } from './pages/Pets';
 import { PetDetails } from './pages/PetDetails';
 import { PetList } from './pages/Admin/PetList';
+import { Shelter } from './pages/Admin/Shelter/Shelter';
 
 const router = createBrowserRouter([
   {
@@ -27,7 +28,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <shelter />,
+        element: <Shelter />,
       },
       {
         path: '/admin/pets',
