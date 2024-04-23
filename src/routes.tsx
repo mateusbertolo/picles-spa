@@ -1,8 +1,8 @@
-import { createBrowserRouter } from 'react-router-dom'
-import { Home } from './pages/Home'
-import { Pets } from './pages/Pets'
-import { PetDetails } from './pages/PetDetails'
-import { PetList } from './pages/Admin/PetList'
+import { createBrowserRouter } from 'react-router-dom';
+import { Home } from './pages/Home';
+import { Pets } from './pages/Pets';
+import { PetDetails } from './pages/PetDetails';
+import { PetList } from './pages/Admin/PetList';
 
 const router = createBrowserRouter([
   {
@@ -33,12 +33,13 @@ const router = createBrowserRouter([
         path: '/admin/pets',
         children: [
           {
-          index: true,
-          element: <PetList />,
-          }
+            index: true,
+            element: <PetList />,
+          },
         ]
       },
-  },
-])
+    ]
+  }
+]);
 
-export default router
+export default router;
