@@ -1,23 +1,25 @@
-import styles from './Select.module.css';
-import { SelectHTMLAttributes } from "react";
+import { SelectHTMLAttributes } from 'react'
+import styles from './Select.module.css'
 
 interface ISelect extends SelectHTMLAttributes<HTMLSelectElement> {
-    label: string;
-    options: {
-        value: string;
-        text: string;
-    }[];
+  label: string
+  options: {
+    value: string
+    text: string
+  }[]
 }
 
-export function Select({ label, options, ...rest }: ISelect): JSX.Element {
-    return (
-        <div className={styles.selectGroup}>
-            <label>{label}</label>
-            <select className={styles.select} {...rest}>
-                {options.map(option => (
-                    <option key={option.value} value={option.value}>{option.text}</option>
-                ))}
-            </select>
-        </div>
-    );
+export function Select({ label, options, ...rest }: ISelect) {
+  return (
+    <div className={styles.selectGroup}>
+      <label>{label}</label>
+      <select {...rest}>
+        {options.map((option) => (
+          <option key={option.value} value={option.value}>
+            {option.text}
+          </option>
+        ))}
+      </select>
+    </div>
+  )
 }
