@@ -1,9 +1,9 @@
-import { Painel } from "../../../components/layout/Panel/Painel"
+import { Panel } from "../../../components/layout/Panel"
 
 export function PetList(){
     return(
-        <Painel>
+        <Panel>
             Listagem de Pets
-        </Painel>
+        </Panel>
     )
 }
