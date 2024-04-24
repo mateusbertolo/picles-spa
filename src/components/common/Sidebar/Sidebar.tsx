@@ -1,21 +1,20 @@
 import { NavLink } from 'react-router-dom';
 import styles from './Sidebar.module.css';
 
-export function Sidebar() {
-    function validate(event: { preventDefault: () => void; }) {
-        const canAccess = false;
+export function Sidebar(){
+    function validate(){
+        const canAccess = false
 
-        if (!canAccess) {
-            event.preventDefault();
+        if(!canAcess){
+            Event:preventDefault()
         }
     }
-
-    return (
+    return(
         <nav className={styles.Sidebar}>
-            <NavLink onClick={validate} to="/admin">
+            <NavLink className={(isActive) => (isActive ? styles.active : '')} to="/admin">end
                 Meu Abrigo
             </NavLink>
-            <NavLink onClick={validate} to="/admin/pets">
+            <NavLink className={(isActive) => (isActive ? styles.active : '')} to="/admin/pets">end
                 Pets
             </NavLink>
             <NavLink to="/">
