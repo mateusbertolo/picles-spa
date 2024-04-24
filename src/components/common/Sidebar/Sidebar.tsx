@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import styles from './Sidebar.module.css';
 
 export function Sidebar() {
-    function validate(event) {
+    function validate(event: { preventDefault: () => void; }) {
         const canAccess = false;
 
         if (!canAccess) {
