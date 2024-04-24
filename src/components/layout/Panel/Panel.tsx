@@ -1,16 +1,16 @@
-
-import styles from './Panel.module.css'
 import { ReactNode } from 'react'
+import styles from './Panel.module.css'
+import { Sidebar } from '../../common/Sidebar/Sidebar'
 
-interface IPainel{
-    children: ReactNode
+interface IPanel {
+  children: ReactNode
 }
 
-
-export function Panel({children}: IPainel){
-    return( <div className={styles.Panel}>
-        <div>Sidebar</div>
-        <main className={styles.content}>{children}</main>
+export function Panel({ children }: IPanel) {
+  return (
+    <div className={styles.panel}>
+      <Sidebar />
+      <main className={styles.content}>{children}</main>
     </div>
-    )
+  )
 }

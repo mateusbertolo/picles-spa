@@ -1,10 +1,9 @@
-import { createBrowserRouter } from 'react-router-dom';
-import { Home } from './pages/Home';
-import { Pets } from './pages/Pets';
-import { PetDetails } from './pages/PetDetails';
-import { PetList } from './pages/Admin/PetList';
-import { Shelter } from './pages/Admin/Shelter/Shelter';
-import { AuthHOC } from './components/common/authHOC/authHOC';
+import { createBrowserRouter } from 'react-router-dom'
+import { Home } from './pages/Home'
+import { Pets } from './pages/Pets'
+import { PetDetails } from './pages/PetDetails'
+import { Shelter } from './pages/Admin/Shelter'
+import { PetList } from './pages/Admin/PetList'
 
 const router = createBrowserRouter([
   {
@@ -33,16 +32,15 @@ const router = createBrowserRouter([
       },
       {
         path: '/admin/pets',
-        element: <AuthHOC />,
         children: [
           {
             index: true,
             element: <PetList />,
           },
-        ]
+        ],
       },
-    ]
-  }
-]);
+    ],
+  },
+])
 
-export default router;
+export default router
