@@ -4,7 +4,7 @@ import { Pets } from './pages/Pets'
 import { PetDetails } from './pages/PetDetails'
 import { Shelter } from './pages/Admin/Shelter'
 import { PetList } from './pages/Admin/PetList'
-import { AuthHOC } from './components/common/AuthHOC/AuthHOC'
+import { AuthHOC } from './components/common/authHOC'
 
 const router = createBrowserRouter([
   {
