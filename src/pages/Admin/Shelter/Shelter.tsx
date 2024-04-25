@@ -1,4 +1,4 @@
-import { Button } from '../../../components/common/Button'
+import { Button, ButtonVariant } from '../../../components/common/Button'
 import { Input } from '../../../components/common/Input'
 import { Panel } from '../../../components/layout/Panel'
 
@@ -13,7 +13,6 @@ import { useQueryClient } from '@tanstack/react-query'
 import { useShelter } from '../../../hooks/useShelter'
 import { useEffect } from 'react'
 import { Skeleton } from '../../../components/common/skeleton'
-
 
 const shelterSchema = z.object({
   name: z
@@ -121,7 +120,16 @@ export function Shelter() {
             )}
           </div>
 
-          <Button type="submit">Salvar dados</Button>
+          <Button
+            type="submit"
+            variant={
+              !formState.isDirty || formState.isSubmitting
+                ? ButtonVariant.Disabled
+                : ButtonVariant.Default
+            }
+          >
+            Salvar dados
+          </Button>
         </form>
       )}
     </Panel>
