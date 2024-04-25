@@ -12,7 +12,8 @@ import { updateShelter } from '../../../services/shelter/updateShelter'
 import { useQueryClient } from '@tanstack/react-query'
 import { useShelter } from '../../../hooks/useShelter'
 import { useEffect } from 'react'
-import { Skeleton } from '../../../components/common/Skeleton'
+import { Skeleton } from '../../../components/common/skeleton'
+
 
 const shelterSchema = z.object({
   name: z
