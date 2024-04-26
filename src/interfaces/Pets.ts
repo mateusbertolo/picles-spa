@@ -1,19 +1,22 @@
-export interface Pet{
-    id:string
+export interface IPet {
+    id: string
     name: string
     type: string
     size: string
-    gender:string
-    bio:string
-    photo:string
-}
-
-export type GetPetsRequet = Partial<Pick<IDBIndexParameters, 'type' >
-
-}
-
-export type GetPetsResponse = {
+    gender: string
+    bio: string
+    photo: string
+  }
+  
+  export type GetPetsRequest = Partial<Pick<IPet, 'type' | 'size' | 'gender'>> & {
+    page?: number
+  }
+  
+  export type GetPetsResponse = {
     items: IPet[]
-    totalPages:number
-    currentPage:number
-}
+    totalPages: number
+    currentPage: number
+  }
+  
+  export type AddPetRequest = Omit<IPet, 'id' | 'photo'>
+  
